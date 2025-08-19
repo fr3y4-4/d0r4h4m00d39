@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mail</title>
+    <link rel="stylesheet" href="mailstyle.css">
+    <link rel="icon" type="image/x-icon" href="images/lettercon.gif">
+</head>
+<body>
+    <audio src="audio/Once Upon A Dream - ETHEREAL REMIX (USE HEADPHONES).mp3" autoplay loop></audio>
+   <div class="snowflakes" id="falling">
+  <!-- add your 'snowflake' images below - you can add more or less if needed -->
+  <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+  <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+    <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+    <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+   <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+  <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+    <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+    <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+    <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+  <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+    <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+    <div class="snowflake"><img src="images/heart14-1.gif" style="width:30px;" /></div>
+</div>
+</div>
+
+    <div class="wrapper">
+        <img src="images/0b1904582eff2b18181723544b7add31-removebg-preview.png">
+        <p>to Ani,<br><br><br>
+        you are easily the best person i met in this country, and being friends with you is the only reason i dont consider being in that school as a waste of time. youre smart and cool and top best friend ever, mfs in school r dumb as fuck for wasting the chance to be your friend but its ok cuz they dont deserve it. i love your way of speaking and mannerisms, sometimes it feels like talking to a book or game character bc of how expressive you are and its cute. you are cute in general youre like a care bear IRL and you have the energy of one, youre completely special to me and idk what else to say but i love you i love you i loe youu i lovve youu 4ever come back from moscow immediately on new year so we can play creepypasta games</p>
+     <img id="starry" src="images/starrynight4.gif">
+    </div>
+    <div class="unicorn">
+        <div class="chat-bubble" id="chat">you have new mail!</div>
+    <img class="uni" src="images/uniccorn.gif">
+    </div> 
+    <div class="cheer">
+        <div class="speech" id="speech">i love you!!!</div>
+    <img class="bear" id="bear" src="images/NicePng_care-bear-png_473221.png">
+    </div>
+    <script>
+        const toggleImage = document.getElementById("bear");
+        const chatBubble = document.getElementById("speech");
+        const fallingObjects = document.getElementById("falling");
+
+        let bubbleVisible = false;
+
+        toggleImage.addEventListener("click", () => {
+            bubbleVisible = !bubbleVisible;
+
+            if (bubbleVisible) {
+                chatBubble.style.opacity = "1";
+                fallingObjects.style.display = "block";
+            } else {
+                chatBubble.style.opacity = "0";
+                fallingObjects.style.display = "block"
+            }
+        });
+    </script>
+    <a href="http://127.0.0.1:5500/dorahamood/main.html"><img class="back" src="images/backbutton.webp"></a>
+    </body>
+    </html>

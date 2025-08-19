@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+English');
+
+body, html {
+	padding: 0;
+	margin: 0;
+	color: #000000;
+}
+
+body {
+	font-family: 'IM Fell English', serif;
+	background-image: url(images/IMG_20250818_172256.jpg);
+ 	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+	font-size: 2.2rem;
+	color: #181008;
+    margin-top: 150px
+}
+.wrapper p {
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2% 3%;
+    font-weight: bold;
+}
+a {
+	color: #20160d;
+	text-decoration: none;
+    font-size: 1.5rem;
+}
+
+  a:hover {
+	color: #515c43;
+	;
+  }
+.wrapper {
+	width: 55vw;
+    margin: auto;
+	margin-top: 20px;
+	box-shadow: 0 0 24px #3d382c1c;
+	padding: 24px 70px;
+	margin-bottom: 120px;
+	padding-bottom: 50px;
+    background-image: url(images/page22.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.back {
+    width: 9vw;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    animation: pulse 2.4s ease infinite;
+    transition: filter 0.3s ease;
+}
+.back:hover{
+    filter: brightness(80%);
+}
+.back a{
+    display: block;
+    width: 100%;
+}

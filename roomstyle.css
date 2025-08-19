@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: sant;
+    src: url(fonts/sant-joan-despi/SantJoanDespiRegular.otf);
+}
+@font-face {
+    font-family: kaoly;
+    src: url(fonts/kaoly/Kaoly\ Demo-Regular.ttf);
+}
+@font-face {
+    font-family: porkys;
+    src: url(fonts/porky_s/PORKYS_.TTF);
+}
+@font-face {
+    font-family: cheri;
+    src: url(fonts/cheri/CHERI___.TTF);
+}
+@font-face {
+    font-family: romantic;
+    src: url(fonts/new_romantics/ROMANTIC.TTF);
+}
+@font-face {
+    font-family: sweet;
+    src: url(fonts/sweet_creamy_2/Sweet\ Creamy\ Italic.otf);
+}
+body {
+    height: 100vh;
+    background-image: url(images/roombg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10% 50%;
+    position: relative;
+}
+.sleep{
+    position: relative;
+    display: inline-block;
+    transform: translate(3vw, 1vw);
+    animation: float infinite ease 3.4s;
+}
+.sleep img{
+    width: 15vw;
+    cursor: pointer;
+}
+.bubble{
+        font-family: cheri;
+    color: #3d3c6e;
+    position: relative;
+    top: -200px;
+    left: 50%;
+    font-size: 1.2vw;
+    transform: translateX(30%);
+    width: 15vw;
+    padding: 15px;
+    background: rgba(222, 225, 233, 0.932);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(72, 48, 117, 0.315);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4 ease;
+}
+.bubble::after{
+    content: '';
+    position: absolute;
+    left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+    z-index: -1;
+    transform: rotate(-50deg);
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+    margin-left: -10px;
+    border-color: rgba(222, 225, 233, 0.932) transparent transparent transparent;
+}
+.bubble.show{
+    opacity: 1;
+}
+@keyframes float {
+    0% {
+        transform: translate(3vw, 1vh);
+    }
+    50% {
+        transform: translate(3vw, 3vh);
+    }
+    100% {
+        transform: translate(3vw, 1vh)
+    }
+}
+.button{
+border-width: 1vw;
+text-align: center;
+align-content: center;
+position: absolute;
+width: 11vw;
+transform: scale(1);
+height: 10vh;
+border-style: solid; 
+box-shadow: 0 2px 5px #885566a2;
+border-image: url("https://toyhamu.nekoweb.org/myroom/borders/milk%20strawberry%20filling.png") 13 fill round; 
+background-clip: padding-box;
+transition: filter 0.3s ease;
+animation: pulse 2.4s ease infinite;
+}
+.button a{
+    text-decoration: none;
+    font-size: 1.6vw;
+    font-family: sant;
+    color: #86344f;
+    font-weight: bold;
+     text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
+}
+@keyframes pulse{
+    0% {transform: scale(1);}
+    50%{transform: scale(1.08);}
+    100%{transform: scale(1);}
+}
+.button:hover{
+    filter: brightness(80%);
+}
+#dollhouse{
+    bottom: 10vh;
+left: 3vw;
+}
+#journal{
+    top: 22vh;
+    left: 40vw;
+}
+.back {
+    width: 9vw;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    animation: pulse 2.4s ease infinite;
+    transition: filter 0.3s ease;
+}
+.back:hover{
+    filter: brightness(80%);
+}
+.back a{
+    display: block;
+    width: 100%;
+}

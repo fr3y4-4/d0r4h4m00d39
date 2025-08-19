@@ -1,0 +1,61 @@
+body {
+    background-image: url(dolls/house.gif);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .sticker {
+    position: absolute;
+    width: 5vw; /* adjust */
+    cursor: grab;
+    user-select: none;
+  }
+  #sticker4{
+    width: 6vw;
+  }
+  #sticker1, #sticker3{
+   z-index: 4;
+  }
+  #sticker5{
+    width: 4vw;
+  }
+  #sticker6{
+    width: 4vw;
+  }
+   button {
+        left: 0%;
+        margin-bottom: 2%;
+        height: 5vh;
+        border: 3px solid #914162;
+        border-radius: 15px;
+        width: 9vw;
+      margin-right: 10px;
+      padding: 0 10px;
+      font-family: cheri;
+      font-size: 1.5rem;
+      color: #fff9fc;
+      text-shadow: -2px 0 #b85078, 0 2px #b85078, 2px 0 #b85078, 0 -2px #b85078;
+      background-color: #ffbfd9;
+      transition: filter 0.3s ease;
+    }
+    button:hover{
+        filter: brightness(80%);
+    }
+    .back {
+    width: 9vw;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    animation: pulse 2.4s ease infinite;
+    transition: filter 0.3s ease;
+}
+.back:hover{
+    filter: brightness(80%);
+}
+.back a{
+    display: block;
+    width: 100%;
+}

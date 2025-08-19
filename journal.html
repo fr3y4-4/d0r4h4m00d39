@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>journal</title>
+  <link rel="stylesheet" href="journalstyle.css">
+  <link rel="icon" type="image/x-icon" href="images/journalicon.gif">
+</head>
+<body>
+  <div class="journal" id="journal">
+    <div id="tray1" class="container"></div>
+    <div id="tray2" class="container"></div>
+    <!-- Example stickers -->
+    <img src="stickers/angelicpretty.gif" class="sticker" id="girls">
+    <img src="stickers/artworkbearteacup.gif" class="sticker">
+    <img src="stickers/bowdivider.webp" class="sticker">
+    <img src="stickers/carefooter.webp" class="sticker" id="borders">
+    <img src="stickers/careheader.webp" class="sticker" id="borders">
+    <img src="stickers/fragolina.gif" class="sticker" id="girls">
+    <img src="stickers/heart6-pink1.gif" class="sticker">
+    <img src="stickers/hellokitty.webp" class="sticker">
+    <img src="stickers/orsetti.gif" class="sticker" id="borders">
+    <img src="stickers/rainbow.webp" class="sticker">
+    <img src="stickers/rainbowdivider.webp" class="sticker">
+    <img src="stickers/rosegirl.png" class="sticker" id="girls">
+    <img src="stickers/starrs.webp" class="sticker">
+    <img src="stickers/strabwerryhanger.gif" class="sticker">
+    <img src="stickers/strawberroesdivider.gif" class="sticker">
+    <img src="stickers/strawberygirl.gif" class="sticker" id="girls">
+    <img src="stickers/tumblr_mmrx0ptX0u1r7y61oo1_250.gif" class="sticker">
+    <img src="stickers/unifooter.webp" class="sticker" id="borders">
+    <img src="stickers/uniheader.webp" class="sticker" id="borders">
+    <img src="stickers/usahanabyartwork.gif" class="sticker">
+    <img src="stickers/ri200-012-abanner.gif" class="sticker" id="borders">
+    <img src="stickers/fr200-009-abanner.gif" class="sticker" id="borders">
+    <img src="stickers/st200-017-abanner.png" class="sticker" id="borders">
+    <img src="stickers/tumblr_c2b520eb038c228a8905d1c3aa892938_d0e72092_100.webp" class="sticker">
+    <img src="stickers/tumblr_inline_p7tnzo5dis1qk1or3_250.webp" class="sticker" id="borders">
+    <img src="stickers/tumblr_inline_p7tnzovpz91qk1or3_250.webp" class="sticker" id="borders">
+    <img src="stickers/tumblr_inline_p7tnzqKQeN1qk1or3_250.webp" class="sticker" id="borders">
+    <img src="stickers/tumblr_inline_p7tnzryrq91qk1or3_250.webp" class="sticker" id="borders">
+    </div>
+    <div class="controls">
+      <button onclick="saveLayout()">Save</button>
+      <button onclick="resetLayout()">Reset</button>
+    </div>
+<script>
+    const stickers = document.querySelectorAll('.sticker');
+    const trays = [document.getElementById('tray1'), document.getElementById('tray2')];
+
+    let originalPositions = [];
+
+    // Place stickers in trays at random spots inside
+    function placeStickersInitially() {
+      stickers.forEach((sticker, i) => {
+        const tray = trays[i % trays.length]; // alternate trays
+        const trayRect = tray.getBoundingClientRect();
+        const journalRect = document.getElementById('journal').getBoundingClientRect();
+
+        // Random position inside tray
+        const left = tray.offsetLeft + Math.random() * (tray.offsetWidth - sticker.width);
+        const top = tray.offsetTop + Math.random() * (tray.offsetHeight - sticker.height);
+
+        sticker.style.left = left + 'px';
+        sticker.style.top = top + 'px';
+
+        // Save as "original" for reset
+        originalPositions[i] = { left: sticker.style.left, top: sticker.style.top };
+      });
+    }
+
+    // Dragging logic
+    stickers.forEach((sticker, i) => {
+      let offsetX, offsetY;
+
+      sticker.addEventListener('mousedown', (e) => {
+        offsetX = e.clientX - sticker.offsetLeft;
+        offsetY = e.clientY - sticker.offsetTop;
+
+        function mouseMoveHandler(e) {
+          sticker.style.left = (e.clientX - offsetX) + 'px';
+          sticker.style.top = (e.clientY - offsetY) + 'px';
+        }
+
+        function mouseUpHandler() {
+          document.removeEventListener('mousemove', mouseMoveHandler);
+          document.removeEventListener('mouseup', mouseUpHandler);
+        }
+    document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
+      });
+    });
+
+    // Save layout
+    function saveLayout() {
+      const layout = [];
+      stickers.forEach(sticker => {
+        layout.push({ src: sticker.src, top: sticker.style.top, left: sticker.style.left });
+      });
+      localStorage.setItem('journalLayout', JSON.stringify(layout));
+      alert('Layout saved!');
+    }
+
+    // Load layout
+    window.onload = () => {
+      const saved = JSON.parse(localStorage.getItem('journalLayout'));
+      if (saved) {
+        saved.forEach((data, i) => {
+          
+stickers[i].style.top = data.top;
+          stickers[i].style.left = data.left;
+        });
+      } else {
+        placeStickersInitially(); // place them in trays if no save yet
+      }
+    };
+
+    // Reset layout
+    function resetLayout() {
+      localStorage.removeItem('journalLayout');
+      stickers.forEach((sticker, i) => {
+        sticker.style.top = originalPositions[i].top;
+        sticker.style.left = originalPositions[i].left;
+      });
+    }
+  </script>
+   <a href="http://127.0.0.1:5500/dorahamood/room.html"><img class="back" src="images/backbutton.webp"></a>
+</body>
+</html>

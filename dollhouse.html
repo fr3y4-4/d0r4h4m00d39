@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dollhouse</title> 
+  <link rel="stylesheet" href="dollhousestyle.css">
+  <link rel="icon" type="image/x-icon" href="dolls/bow.gif">
+</head>
+<body>
+<img src="dolls/pinkdoll.webp" class="sticker" id="sticker1">
+<img src="dolls/tumblr_77f766f492df4d4ede4d8cad49436896_40d54490_100.webp" class="sticker" id="sticker2">
+<img src="dolls/tumblr_9b37112fa5a73964299fc40675f56627_1147bdc9_100.webp" class="sticker" id="sticker3">
+<img src="dolls/table1-pink1.gif" class="sticker" id="sticker4">
+<img src="dolls/chair2-pink1.gif" class="sticker" id="sticker5">
+<img src="dolls/chair2-pink2.gif" class="sticker" id="sticker6">
+<img src="dolls/dress1.webp" class="sticker" id="sticker7">
+<img src="dolls/dress2.webp" class="sticker" id="sticker8">
+<img src="dolls/dress3.webp" class="sticker" id="sticker9">
+<img src="dolls/newrila.gif" class="sticker" id="sticker10">
+
+<!-- Buttons -->
+<button onclick="resetStickers()">Reset</button>
+<button onclick="saveStickers()">Save</button>
+
+<script>
+  // define original positions
+  const stickers = {
+    sticker1: {x: 150, y: 170}, 
+    sticker2: {x: 230, y: 150},
+    sticker3: {x: 330, y: 170},
+    sticker4: {x: 330, y: 500},
+    sticker5: {x: 280, y: 500},
+    sticker6: {x: 360, y: 500},
+    sticker7: {x: 430, y: 170},
+    sticker8: {x: 470, y: 170},
+    sticker9: {x: 500, y: 170},
+    sticker10: {x: 630, y: 150},
+  };
+
+  // apply initial positions
+  for (let id in stickers) {
+    const el = document.getElementById(id);
+    el.style.left = stickers[id].x + "px";
+    el.style.top = stickers[id].y + "px";
+    makeDraggable(el);
+}
+
+  // drag function
+  function makeDraggable(el) {
+    let offsetX = 0, offsetY = 0;
+
+    el.onmousedown = (e) => {
+      e.preventDefault();
+      offsetX = e.clientX - el.offsetLeft;
+      offsetY = e.clientY - el.offsetTop;
+
+      document.onmousemove = (e) => {
+        el.style.left = (e.clientX - offsetX) + "px";
+        el.style.top = (e.clientY - offsetY) + "px";
+      };
+
+      document.onmouseup = () => {
+        document.onmousemove = null;
+        document.onmouseup = null;
+      };
+    };
+  }
+
+function resetStickers() {
+    for (let id in stickers) {
+      const el = document.getElementById(id);
+      el.style.left = stickers[id].x + "px";
+      el.style.top = stickers[id].y + "px";
+    }
+    localStorage.removeItem("savedStickers");
+  }
+
+  // save positions to localStorage
+  function saveStickers() {
+    let saved = {};
+    for (let id in stickers) {
+      const el = document.getElementById(id);
+      saved[id] = {
+        x: parseInt(el.style.left),
+        y: parseInt(el.style.top)
+      };
+    }
+    localStorage.setItem("savedStickers", JSON.stringify(saved));
+    alert('Layout saved!')
+  }
+  window.onload = () => {
+    const saved = JSON.parse(localStorage.getItem("savedStickers"));
+    if (saved) {
+      for (let id in saved) {
+        const el = document.getElementById(id);
+        el.style.left = saved[id].x + "px";
+        el.style.top = saved[id].y + "px";
+      }
+    }
+  };
+</script>
+<a href="http://127.0.0.1:5500/dorahamood/room.html"><img class="back" src="images/backbutton.webp"></a>
+</body>

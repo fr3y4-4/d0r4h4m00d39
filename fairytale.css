@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+@font-face {
+    font-family: sant;
+    src: url(fonts/sant-joan-despi/SantJoanDespiRegular.otf);
+}
+@font-face {
+    font-family: kaoly;
+    src: url(fonts/kaoly/Kaoly\ Demo-Regular.ttf);
+}
+@font-face {
+    font-family: porkys;
+    src: url(fonts/porky_s/PORKYS_.TTF);
+}
+@font-face {
+    font-family: cheri;
+    src: url(fonts/cheri/CHERI___.TTF);
+}
+@font-face {
+    font-family: romantic;
+    src: url(fonts/new_romantics/ROMANTIC.TTF);
+}
+body {
+    height: 100vh;
+    background-image: url(images/tumblr_inline_mw4amxUNWo1s5t339540.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    overflow: hidden;
+    position: relative;
+}
+.container{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    height: 40%;
+    opacity: 0.9;
+
+}
+img{
+    z-index: -1;
+    width: 65vw;
+}
+p{
+    font-family: romantic;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2vh;
+    align-self: center;
+    z-index: 1;
+    padding: 2% 2%;
+}

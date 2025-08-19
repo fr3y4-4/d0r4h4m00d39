@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>room</title>
+    <link rel="stylesheet" href="roomstyle.css">
+    <link rel="icon" type="image/x-icon" href="images/strawb.gif">
+</head>
+<body>
+    <audio src="audio/[Vocaloid] Magnet - Musicbox..mp3" autoplay loop></audio>
+    <div class="sleep">
+    <img src="images/pngegg (2).png" id="character">
+    <div class="bubble" id="bubble"></div>
+  </div>
+  <script>
+    const messages = [
+      "turn off the light...",
+      "let me sleep..",
+      "zzzzzzzzzz"
+    ];
+
+    let index = 0;
+    const img = document.getElementById("character");
+    const bubble = document.getElementById("bubble");
+    let hideTimeout;
+
+    img.addEventListener("click", () => {
+      clearTimeout(hideTimeout);
+
+      bubble.textContent = messages[index];
+      bubble.classList.add("show");
+
+      index = (index + 2) % messages.length;
+
+      hideTimeout = setTimeout(() => {
+        bubble.classList.remove("show");
+      }, 5000);
+    });
+  </script>
+  <div class="button" id="dollhouse">
+    <a href="http://127.0.0.1:5500/dorahamood/dollhouse.html">dollhouse</a>
+  </div>
+<div class="button" id="journal">
+    <a href="http://127.0.0.1:5500/dorahamood/journal.html">journal</a>
+</div>
+    <a href="http://127.0.0.1:5500/dorahamood/main.html"><img class="back" src="images/backbutton.webp"></a>
+</body>
+</html>

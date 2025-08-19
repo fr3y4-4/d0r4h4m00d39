@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entrance</title>
+    <link rel="stylesheet" href="enterstyle.css">
+    <link rel="icon" type="image/x-icon" href="images/iconbluebear.webp">
+    <script type="text/javascript">
+// <![CDATA[
+var speed=150; // speed of wobbling, lower is faster
+var height=3; // height of wobbling in pixels
+var alink="http://www.mf2fm.com/rv"; // page to link text to (set to ="" for no link)
+
+/****************************
+*    Wobbly Text Effect     *
+*(c) 2003-6 mf2fm web-design*
+*  http://www.mf2fm.com/rv  *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+var wobtxt, wobble, wobcnt=0;
+window.onload=function() { if (document.getElementById) {
+  var i, wobli;
+  wobble=document.getElementById("wobble");
+  wobtxt=wobble.firstChild.nodeValue;
+  while (wobble.childNodes.length) wobble.removeChild(wobble.childNodes[0]);
+  for (i=0; i<wobtxt.length; i++) {
+    wobli=document.createElement("span");
+    wobli.setAttribute("id", "wobb"+i);
+    wobli.style.position="relative";
+    wobli.appendChild(document.createTextNode(wobtxt.charAt(i)));
+    if (alink) {
+      wobli.style.cursor="pointer";
+      wobli.onclick=function() { top.location.href=alink; }
+    }
+    wobble.appendChild(wobli);
+  }
+  setInterval("wobbler()", speed);
+}}
+
+function wobbler() {
+  for (var i=0; i<wobtxt.length; i++) document.getElementById("wobb"+i).style.top=Math.round(height*Math.sin(i+wobcnt))+"px"
+  wobcnt++;
+}
+// ]]>
+</script>
+</head>
+<body>
+    <div id="access">
+    <a href="http://127.0.0.1:5500/dorahamood/main.html"><img class="enter" src="images/tumblr_3ac80f7d37fd63d283fdd788a4ff76ca_07e6384e_75.webp"></a>
+
+    </div>
+    <div class="container">
+    <h1 id="wobble">! Enter Password !</h1>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkPassword()">Submit</button>
+  </div>
+  <script>
+function checkPassword() {
+      const correctPassword = "DORA39HAMOOD"; 
+      const input = document.getElementById("password").value;
+      const chatBubble = document.getElementById("chat");
+      if (input === correctPassword) {
+       document.getElementById("access").style.display = "block";
+       chatBubble.textContent = "yayayayay you got it!!! click on the right castle's door so we can come inside!!!!!!!!!!!!";
+      } else {
+        chatBubble.textContent = "nope... wrong. try again. and this time USE YOUR FUCKING BRAIN!1!!!";
+      }
+    }
+  </script>
+  <div class="bear">
+    <div class="chat-bubble" id="chat">ok we're away from the dungeon and wizard and soup shit here.... but we need the password to get in!!!! you should have it encrypted in a journal you own somewhere... maybe miku can help too.</div>
+    <img class="cheer" src="images/imgbin_5c3b2782fcbce7b1e5379e6c95b2c5d5.png">
+  </div>
+  <div class="miku">
+    <img src="images/imgbin_97feb3ee1e87368c9c8f0d877b1247b2.png" id="character">
+    <div class="bubble" id="bubble"></div>
+  </div>
+  <script>
+    const messages = [
+      "pay attention to letters that stand out, and be mindful of caps",
+      "did you know 39 is spelled as mi ku in japanese? it's my number!!!"
+    ];
+
+    let index = 0;
+    const img = document.getElementById("character");
+    const bubble = document.getElementById("bubble");
+    let hideTimeout;
+
+    img.addEventListener("click", () => {
+      clearTimeout(hideTimeout);
+
+      bubble.textContent = messages[index];
+      bubble.classList.add("show");
+
+      index = (index + 1) % messages.length;
+
+      hideTimeout = setTimeout(() => {
+        bubble.classList.remove("show");
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

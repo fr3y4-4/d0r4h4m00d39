@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: sant;
+    src: url(fonts/sant-joan-despi/SantJoanDespiRegular.otf);
+}
+@font-face {
+    font-family: kaoly;
+    src: url(fonts/kaoly/Kaoly\ Demo-Regular.ttf);
+}
+@font-face {
+    font-family: porkys;
+    src: url(fonts/porky_s/PORKYS_.TTF);
+}
+@font-face {
+    font-family: cheri;
+    src: url(fonts/cheri/CHERI___.TTF);
+}
+@font-face {
+    font-family: romantic;
+    src: url(fonts/new_romantics/ROMANTIC.TTF);
+}
+@font-face {
+    font-family: sweet;
+    src: url(fonts/sweet_creamy_2/Sweet\ Creamy\ Italic.otf);
+}
+body {
+    height: 100vh;
+    background-image: url(images/f69ff944-74ce-47a3-ad80-613a32da373e.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 20%;
+    overflow: hidden;
+    display: grid;
+    position: relative;
+}
+.wrapper{
+    justify-self: center;
+    align-self: center;
+    width: 45%;
+    height: 92%;
+    border: 120px solid transparent;
+    z-index: 1;
+    border-image: url(images/Picsart_25-08-17_21-13-35-149.png) 800 round;
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-self: center;
+    align-self: center;
+    width: 37.5%;
+    z-index: -1;
+    height: 85.5%;
+    overflow: hidden;
+    padding: 3% 2%;
+    background-color: #dfddff93;
+}
+.container header{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.container header h1{
+    padding: 0 4%;
+    font-size: 3.8rem;
+    font-family: romantic;
+    letter-spacing: 10px;
+    color: rgb(70, 43, 35);
+    animation: glow 3s infinite;
+}
+.container header img{
+    background-repeat: repeat-x;
+    opacity: 0.6;
+    filter: contrast(80%) brightness(160%) saturate(0%);
+    height: 8vh;
+}
+.container .main{
+    font-size: 1.8rem;
+}
+.navbar{
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    width: 40vw;
+    top: 25%;
+    right: 0;
+    margin-bottom: 60px; 
+    transform: translate(9.5vw, 2vw);
+    position: absolute;
+    height: 60vh;
+}
+.navbar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.navbar a{
+    background: url(images/50b-none.gif) no-repeat;
+    background-size: contain;
+    background-position: top;
+    display: block;
+    padding-top: 6.2vh;
+    text-align: center;
+    text-decoration: none;
+    font-family: romantic;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 10vw;
+    color: white;
+    text-shadow: -2px 0 #160e0c, 0 2px #160e0c, 2px 0 #160e0c, 0 -2px #160e0c;
+    height: 11.9vh;
+    transition: filter 0.3 ease;
+}
+.navbar li a:hover{
+    filter: brightness(80%);
+}
+@keyframes glow {
+    0% {
+        text-shadow: -1px -1px 10px #f2eeff, 0 1px #f3efff, 1px 0 #eed4ff, 0 -1px #b2a6cc;
+    }
+   50% {
+    text-shadow: -1px -1px 20px #b6b2d4, 0 1px #ddd7f5, 1px 0 #c8c5e2, 0 -1px hsl(278, 36%, 75%);
+   }
+   100% {
+    text-shadow: -1px -1px 10px #f2eeff, 0 1px #f3efff, 1px 0 #eed4ff, 0 -1px #b2a6cc;
+   }
+}
+.bears{
+    width: 16vw;
+    position: absolute;
+    bottom: 1%;
+    left: 18%;
+    z-index: 2;
+}
+.main p{
+    font-family: sweet;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color: rgb(53, 33, 27);
+    margin-top: 15px;
+    padding: 0 2%;
+}

@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: sant;
+    src: url(fonts/sant-joan-despi/SantJoanDespiRegular.otf);
+}
+@font-face {
+    font-family: kaoly;
+    src: url(fonts/kaoly/Kaoly\ Demo-Regular.ttf);
+}
+@font-face {
+    font-family: porkys;
+    src: url(fonts/porky_s/PORKYS_.TTF);
+}
+@font-face {
+    font-family: cheri;
+    src: url(fonts/cheri/CHERI___.TTF);
+}
+@font-face {
+    font-family: romantic;
+    src: url(fonts/new_romantics/ROMANTIC.TTF);
+}
+@font-face {
+    font-family: sweet;
+    src: url(fonts/sweet_creamy_2/Sweet\ Creamy\ Italic.otf);
+}
+body {
+    height: 100vh;
+    background-image: url(images/Zatsuon\ Ryōiki\ \(FM-Towns\)\ [1994].jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+}
+.button{
+text-align: center;
+align-content: center;
+position: absolute;
+width: 12vw;
+}
+.button a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vw;
+    text-align: center;
+    text-decoration: none;
+    background: url(images/50a-none.gif) no-repeat;
+    background-size: contain;
+    color: white;
+    font-size: 1.4vw;
+    font-family: romantic;
+    white-space: wrap;
+    padding-top: 4vw;
+    letter-spacing: 5px;
+    transition: filter 0.3s ease;
+}
+#notebook{
+    top: 36vh;
+    right: 44vw;
+}
+#dora{
+    top: 25vh;
+    right: 20vw;
+}
+.button:hover{
+    filter: brightness(80%);
+}
+.back {
+    width: 9vw;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    animation: pulse 2.4s ease infinite;
+    transition: filter 0.3s ease;
+}
+.back:hover{
+    filter: brightness(80%);
+}
+.back a{
+    display: block;
+    width: 100%;
+}

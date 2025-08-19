@@ -1,0 +1,98 @@
+@font-face {
+    font-family: sant;
+    src: url(fonts/sant-joan-despi/SantJoanDespiRegular.otf);
+}
+@font-face {
+    font-family: kaoly;
+    src: url(fonts/kaoly/Kaoly\ Demo-Regular.ttf);
+}
+@font-face {
+    font-family: porkys;
+    src: url(fonts/porky_s/PORKYS_.TTF);
+}
+@font-face {
+    font-family: cheri;
+    src: url(fonts/cheri/CHERI___.TTF);
+}
+@font-face {
+    font-family: romantic;
+    src: url(fonts/new_romantics/ROMANTIC.TTF);
+}
+@font-face {
+    font-family: sweet;
+    src: url(fonts/sweet_creamy_2/Sweet\ Creamy\ Italic.otf);
+}
+body {
+      background-image: url(images/bgstripes.webp);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .journal {
+      position: relative;
+      width: 60vw;
+      height: 92vh;
+      background: url("images/f64e7c14b3447c1d78089001da058ec4.jpg") no-repeat center/cover; /* your blank paper image */
+      border: 1px solid #ceb1bd81;
+    }
+    .container{
+        position: absolute;
+        border: 2px dashed transparent;
+        right: 5%;
+    }
+    #tray1 {right: 1vw; top: 1vw; width: 20vw; height: 18vw;}
+    #tray2 {right: 1vw; top: 30vw; width: 20vw; height: 38;}
+
+.sticker {
+      position: absolute;
+      width: 5vw;
+      cursor: grab;
+    }
+#borders {
+    width: 15vw;
+}
+#girls{
+    width: 8vw;
+}
+    .controls {
+        position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
+    button {
+        left: 0%;
+        margin-bottom: 2%;
+        height: 5vh;
+        border: 3px solid #914162;
+        border-radius: 15px;
+        width: 9vw;
+      margin-right: 10px;
+      padding: 0 10px;
+      font-family: cheri;
+      font-size: 1.5rem;
+      color: #fff9fc;
+      text-shadow: -2px 0 #b85078, 0 2px #b85078, 2px 0 #b85078, 0 -2px #b85078;
+      background-color: #ffbfd9;
+      transition: filter 0.3s ease;
+    }
+    button:hover{
+        filter: brightness(80%);
+    }
+    .back {
+    width: 9vw;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    animation: pulse 2.4s ease infinite;
+    transition: filter 0.3s ease;
+}
+.back:hover{
+    filter: brightness(80%);
+}
+.back a{
+    display: block;
+    width: 100%;
+}
